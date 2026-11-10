@@ -1,4 +1,5 @@
 import { tutorialData } from "../data/data";
+import Icon from './Icon';
 
 function TutorialCard({ lesson }) {
     return (
@@ -15,7 +16,7 @@ function TutorialCard({ lesson }) {
             <p>{lesson.description}</p>
 
             <div className="card-info">
-                <span>★ {lesson.rating}</span>
+                <span className="card-rating" aria-label={`Rating: ${lesson.rating} out of 5`}><Icon name="star" /> {lesson.rating}</span>
                 <span>{lesson.author}</span>
             </div>
 
@@ -26,7 +27,7 @@ function TutorialCard({ lesson }) {
 
 function TutorialSection() {
     return (
-        <section className="content-section">
+        <section className="content-section" id="tutorials">
 
             <h2>Featured Tutorials</h2>
 
@@ -41,7 +42,7 @@ function TutorialSection() {
 
             </div>
 
-            <button>See all tutorials</button>
+            <a className="see-all" href="#tutorials">See all tutorials</a>
 
         </section>
     );

@@ -1,27 +1,23 @@
-import "./App.css";
+import { Route, Routes } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
+import './styles.css'
 
-import ArticleSection from "./componets/Article";
-import TutorialSection from "./componets/Tutorial";
-import Newsletter from "./componets/Newsletter";
-import Footer from "./componets/Footer";
-
-function App() {
-
-    return (
-        <>
-
-            <h1>DEV@Deakin</h1>
-
-            <Newsletter />
-
-            <ArticleSection />
-
-            <TutorialSection />
-
-            <Footer />
-
-        </>
-    );
+export default function App() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </main>
+      <Footer />
+    </>
+  )
 }
-
-export default App;

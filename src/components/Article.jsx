@@ -1,4 +1,5 @@
 import { articleData } from "../data/data";
+import Icon from './Icon';
 
 function ArticleCard({ item }) {
     return (
@@ -15,7 +16,7 @@ function ArticleCard({ item }) {
             <p>{item.description}</p>
 
             <div className="card-info">
-                <span>★ {item.rating}</span>
+                <span className="card-rating" aria-label={`Rating: ${item.rating} out of 5`}><Icon name="star" /> {item.rating}</span>
                 <span>{item.author}</span>
             </div>
 
@@ -26,7 +27,7 @@ function ArticleCard({ item }) {
 
 function ArticleSection() {
     return (
-        <section className="content-section">
+        <section className="content-section" id="articles">
 
             <h2>Featured Articles</h2>
 
@@ -41,7 +42,7 @@ function ArticleSection() {
 
             </div>
 
-            <button>See all articles</button>
+            <a className="see-all" href="#articles">See all articles</a>
 
         </section>
     );

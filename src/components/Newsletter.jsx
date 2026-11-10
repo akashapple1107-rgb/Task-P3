@@ -5,11 +5,15 @@ function Newsletter() {
     const [emailValue, setEmailValue] = useState("");
     const [status, setStatus] = useState("");
 
+    function changeEmail(event) {
+        setEmailValue(event.target.value);
+    }
+
     function subscribe(event) {
 
         event.preventDefault();
 
-        setStatus("Thank you for subscribing!");
+        setStatus("Email validated. Newsletter delivery is implemented in Task P5.");
         setEmailValue("");
     }
 
@@ -24,9 +28,7 @@ function Newsletter() {
                     type="email"
                     placeholder="Enter your email"
                     value={emailValue}
-                    onChange={(event) =>
-                        setEmailValue(event.target.value)
-                    }
+                    onChange={changeEmail}
                     required
                 />
 
